@@ -21,3 +21,4 @@ deploydocs(;
     repo="github.com/OskarGU/TimeVaryingPeriodograms.jl",
     devbranch="master",
 )
+ 

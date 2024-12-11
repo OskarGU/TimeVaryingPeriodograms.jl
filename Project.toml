@@ -1,0 +1,13 @@
+name = "TimeVaryingPeriodograms"
+uuid = "c0f906fa-baad-439c-b358-261421b02136"
+authors = ["OskarGustafsson"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.10"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

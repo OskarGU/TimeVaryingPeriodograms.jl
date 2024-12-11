@@ -14,6 +14,10 @@ makedocs(;
     ),
     pages=[
         "Home" => "index.md",
+        "Periodograms" => "Periodograms.md",
+        "Utils" => "Utils.md",
+        "References" => "reference.md"
+
     ],
 )
 

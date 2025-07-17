@@ -7,11 +7,13 @@ CurrentModule = TimeVaryingPeriodograms
 Documentation for [TimeVaryingPeriodograms](https://github.com/OskarGU/TimeVaryingPeriodograms.jl).
 
 
-The package include several ways to compute a time-varying spectrogram that can be used as a part of inference for locally stationary time series models.
+This package is under development. It include several ways to compute a time-varying spectrograms that can be used as a part of inference for locally stationary time series models.
+
+The package is currently used as a help package in multiple research projects.
 
 # Example usage:
 
-## moving periodograms
+## Moving periodograms
 
 ```julia
 using TimeVaryingPeriodograms, Plots, DSP, ProgressBars

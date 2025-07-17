@@ -55,11 +55,12 @@ scatterTap = scatter(m+1:T-m, λr, marker_z=log.(MITap),  label =false,
 )
 
 
-#savefig(figFolder*"mvPeriodograms.png")
 
 plot(scatterRaw,scatterTap,scatterPreW,scatterBC, layout = (2,2), clim=(-4,2),
      size = (1000,600), left_margin=4Plots.mm
 )
+savefig(figFolder*"mvPeriodograms.png")
+
 
 N=2m+1
 S=20
@@ -76,7 +77,7 @@ hTap = heatmap(m+1:S:T-m, λ*π,  log.(tapBW[1][2:end,:]), title = "tapered")
 hPreW = heatmap(m+1:S:T-m, λ*π,  log.(preWBW'[2:end,:]),title="prewhitened", xlab="time", ylab="frequency")
 hBC = heatmap(m+1:S:T-m, λ*π,  log.(BCBW'[2:end,:]), title = "boundary corrected", xlab="time")
 plot(hBW,hTap,hPreW,hBC, layout = (2,2), size = (1000,600), 
-    left_margin=4Plots.mm, background_color=:darkgrey, clim=(-4,2)
+    left_margin=4Plots.mm, clim=(-4,2)
 )
 #savefig(figFolder*"blockPeriodograms.png")
 
@@ -90,7 +91,7 @@ everittPeriodogram = EverittI(y, λ*π , 0.4, 0.92)
 hEverit = heatmap(1:T,λ*π, real(everittPeriodogram)', clim=(-0.1,0.4), title="Everitt et al.") 
 
 plot(hPreP,hEverit, layout = (1,2), size = (1000,300), left_margin=4Plots.mm, 
-     bottom_margin=4Plots.mm, background_color=:darkgrey, 
+     bottom_margin=4Plots.mm, 
      xlab="time", ylab="frequency", clim=(-0.5,3)
 )
 

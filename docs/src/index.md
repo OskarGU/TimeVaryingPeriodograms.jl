@@ -33,7 +33,7 @@ T = 1000;
 σ = 1; μ = 2;
 y = simTvARMA(ϕ, θ, 0, σ);
 py = plot(y, label="simulated data", c=:black, background_color=:grey, xlab=time)
-pϕ = plot(ϕ[:,1], label="AR parameters", c=:black, background_color=:grey, xlab="time", ylim=(-0.99,1.9))
+pϕ = plot(ϕ[:,1], label="AR parameters", c=:black, xlab="time", ylim=(-0.99,1.9))
 plot!(ϕ[:,2], c=:black, background_color=:grey,label=false)
 plot(py,pϕ, size = (1000,350), bottom_margin=4Plots.mm, background_color=:grey)
 ```
@@ -45,7 +45,7 @@ The time-varying spectral density of the process is given by:
 
 The moving periodogram data is given as a univariate time series of length $T-2m$, and the periodogram entity of the periodogram data belong to a single frequency, see Gustafsson, Villani, and Kohn (2024). 
 
-The periodogram data is computed for all 4 adjustments using
+The periodogram data is computed for all adjustments using
 
 ```julia
 m=30

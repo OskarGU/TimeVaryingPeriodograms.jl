@@ -9,7 +9,7 @@ export wikleTV6AR, DahlhausAR2, simTvARMA
 include("DSSInfer.jl")
 export mvPeriodogram, mvTapPeriodogram, mvPrewhitePeriodogram, mvPrewhiteTapPeriodogram, BoundCorrectedMvPeriodogram, tapBoundCorrectedMvPeriodogram,
 tvPeriodogram, prePeriodogram, predictiveDFT, mvPeriodogram,  completeTapPeriodogram, tapBoundCorrectTvBlockPeriodogram,whitePeriodogram,
-preWhiteTvBlockPeriodogram, prePeriodogram, EverittI, SpecDensARMA,SpecDensARMAFast,
+preWhiteTvBlockPeriodogram, prePeriodogram, EverittI, SpecDensARMA,SpecDensARMAFast,SpecDensARMAFast2,
 rawPeriodogram, transFunkAR, BoundCorrectTvBlockPeriodogram,
 completeDFTSingle, SingleDft2, whitePeriodogram, EverittI, completePeriodogram,reScaleTapTvBlockPeriodogram
 

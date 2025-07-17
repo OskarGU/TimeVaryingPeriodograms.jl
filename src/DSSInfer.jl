@@ -825,6 +825,14 @@ function SpecDensARMAFast(ω::AbstractVector, ϕ, θ, σ²)
   return specDens   
 end
 
+# Even faster evaluations, less than half the time of the above. At least for the experiments I tried. 
+function SpecDensARMAFast2(ω::AbstractVector, ϕ, θ, σ²)
+  expiω = exp.(-im .* ω)
+  ar_vals = abs2.(evalpoly.(expiω, Ref([1.0; -ϕ])))
+  ma_vals = abs2.(evalpoly.(expiω, Ref([1.0; θ])))
+  return (σ² / (2π)) .* ma_vals ./ ar_vals
+end
+
 transFunkAR(ω, ϕ) = SpecDensARMA(ω, ϕ,[0], 1) 
 
 # Helpfunction to rescale the variance of a vector x to the variance of a vector y.

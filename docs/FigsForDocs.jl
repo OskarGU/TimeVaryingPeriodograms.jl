@@ -6,17 +6,17 @@ using TimeVaryingPeriodograms, Plots, DSP, ProgressBars
 
 gr(grid = true, lw = 1, legendfontsize=11,
     xtickfontsize=9, ytickfontsize=9, xguidefontsize=10, yguidefontsize=10,
-    titlefontsize = 14, markersize = 5, markerstrokecolor = :auto, background_color=:darkgrey, c=:viridis
+    titlefontsize = 14, markersize = 5, markerstrokecolor = :auto, c=:viridis
 )
 
 
 T = 1000; ϕ = [sin.(2π*(1:2:2T)/T).+0.4 -0.8*ones(T)]; θ = zeros(T); σ = 1; μ = 2;
 y = simTvARMA(ϕ, θ, 0, σ);
 py = plot(y, label="simulated data", c=:black, xlab=time)
-pϕ = plot(ϕ[:,1], label="AR parameters", c=:black, background_color=:grey, xlab="time", ylim=(-0.99,1.9))
+pϕ = plot(ϕ[:,1], label="AR parameters", c=:black, xlab="time", ylim=(-0.99,1.9))
 plot!(ϕ[:,2], c=:black,label=false)
 
-plot(py,pϕ, size = (1000,350), bottom_margin=4Plots.mm, background_color=:darkgrey)
+plot(py,pϕ, size = (1000,350), bottom_margin=4Plots.mm) 
 #savefig(figFolder*"dataCoeff.png")
  
 ω=0:0.01:π
@@ -58,7 +58,7 @@ scatterTap = scatter(m+1:T-m, λr, marker_z=log.(MITap),  label =false,
 #savefig(figFolder*"mvPeriodograms.png")
 
 plot(scatterRaw,scatterTap,scatterPreW,scatterBC, layout = (2,2), clim=(-4,2),
-     size = (1000,600), left_margin=4Plots.mm, background_color=:darkgrey
+     size = (1000,600), left_margin=4Plots.mm
 )
 
 N=2m+1
